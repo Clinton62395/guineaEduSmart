@@ -1,0 +1,30 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* Variables */
+:root {
+  --primary-color: #1976d2;
+  --secondary-color: #42a5f5;
+  --text-color: #1a237e;
+  --background-color: #f8f9fa;
+  --border-color: #e9ecef;
+}
+
+/* Application globale */
+body {
+  font-family: "Inter", "Poppins", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  box-sizing: border-box;
+}
+
+/* delete webkit scrollbar */
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+/* delete firefox scrollbar */
+* {
+  scrollbar-width: none;
+}
