@@ -1,5 +1,4 @@
 // App.jsx
-import React from "react";
 import {
   Users,
   BarChart3,
@@ -7,9 +6,6 @@ import {
   Cloud,
   Bell,
   Smartphone,
-  CheckCircle,
-  MessageSquare,
-  Globe,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -19,11 +15,11 @@ const HomeSection = () => {
       {/* Header */}
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden" data-aos="fade-up">
         <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-yellow-50 to-red-50 opacity-70"></div>
         <div className="container mx-auto px-4 py-16 md:py-24 relative">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+            <div data-aos="fade-right">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
                 Révolutionnez la{" "}
                 <span className="text-green-600">Gestion Scolaire</span> en
@@ -59,7 +55,7 @@ const HomeSection = () => {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative" data-aos="fade-left">
               <div className="relative bg-white rounded-2xl shadow-2xl p-6">
                 <div className="absolute -top-4 -left-4 w-24 h-24 bg-yellow-500 rounded-full opacity-20"></div>
                 <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-red-600 rounded-full opacity-20"></div>
@@ -119,9 +115,9 @@ const HomeSection = () => {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-16 bg-gray-50">
+      <section id="features" className="py-16 bg-gray-50" data-aos="fade-up">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="zoom-in">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Fonctionnalités Principales
             </h2>
@@ -180,7 +176,10 @@ const HomeSection = () => {
       {/* Benefits Section */}
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-r from-green-600 via-green-700 to-green-800 text-white">
+      <section
+        className="py-16 bg-gradient-to-r from-green-600 via-green-700 to-green-800 text-white"
+        data-aos="fade-up"
+      >
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Prêt à révolutionner votre établissement?
@@ -215,76 +214,11 @@ const FeatureCard = ({ icon, title, description, color }) => {
   return (
     <div
       className={`bg-white p-6 rounded-xl border-2 ${colorClasses[color]} shadow-sm hover:shadow-md transition-all duration-300`}
+      data-aos="fade-up"
     >
       <div className="mb-4">{icon}</div>
       <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
       <p className="text-gray-700">{description}</p>
-    </div>
-  );
-};
-
-// Component for Benefit Cards
-const BenefitCard = ({ title, items, gradient }) => {
-  return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
-      <div className={`bg-gradient-to-r ${gradient} text-white p-6`}>
-        <h3 className="text-xl font-bold">{title}</h3>
-      </div>
-      <div className="p-6">
-        <ul className="space-y-4">
-          {items.map((item, index) => (
-            <li key={index} className="flex items-start">
-              <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-              <span className="text-gray-700">{item}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-// Component for Testimonial Cards
-const TestimonialCard = ({ name, role, content, color }) => {
-  const colorClasses = {
-    green: "bg-green-50 border-green-100",
-    yellow: "bg-yellow-50 border-yellow-100",
-    red: "bg-red-50 border-red-100",
-  };
-
-  const dotColors = {
-    green: "bg-green-500",
-    yellow: "bg-yellow-500",
-    red: "bg-red-500",
-  };
-
-  return (
-    <div className={`p-6 rounded-xl border ${colorClasses[color]} shadow-sm`}>
-      <div className="flex items-center mb-6">
-        <div
-          className={`w-12 h-12 ${dotColors[color]} rounded-full flex items-center justify-center text-white font-bold text-lg`}
-        >
-          {name.charAt(0)}
-        </div>
-        <div className="ml-4">
-          <h4 className="font-bold text-gray-900">{name}</h4>
-          <p className="text-gray-600">{role}</p>
-        </div>
-      </div>
-      <p className="text-gray-700 italic">"{content}"</p>
-      <div className="flex mt-4">
-        {[...Array(5)].map((_, i) => (
-          <svg
-            key={i}
-            className="w-5 h-5 text-yellow-500"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-          </svg>
-        ))}
-      </div>
     </div>
   );
 };

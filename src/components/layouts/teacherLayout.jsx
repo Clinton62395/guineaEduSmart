@@ -11,8 +11,8 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { Outlet } from "react-router-dom";
-import { AppBar, Drawer } from "../../components/styles";
-import CommonSideBar from "../../components/common/common-side/CommonSidebar";
+import { AppBar, Drawer } from "../styles";
+import CommonSideBar from "../common/common-side/CommonSidebar";
 
 const drawerWidth = 240; // largeur du Drawer
 

@@ -125,7 +125,7 @@ export const slides = [
   {
     id: 10,
     imageUrl:
-      "https://images.unsplash.com/photo-1526378722484-cc5c5106c9c3?w=1920&fit=crop",
+      "https://media.istockphoto.com/id/2183953089/photo/portrait-of-a-smiling-woman-in-front-of-a-library.webp?a=1&b=1&s=612x612&w=0&k=20&c=79vFf_DT2Irh_Mh0HvTwt61G-LSUzGef9ljjFQ39hBU=",
     title: "Vision & Croissance",
     subtitle: "Construisons l’avenir de l’éducation",
     description: "Une plateforme évolutive pour le système éducatif guinéen",
@@ -133,6 +133,31 @@ export const slides = [
     color: "#2E7D32",
     overlayOpacity: 0.6,
     icon: <AutoGraph sx={{ fontSize: 60 }} />,
+  },
+  {
+    id: 11,
+    imageUrl:
+      "https://media.istockphoto.com/id/1312139041/photo/learning-on-the-job.webp?a=1&b=1&s=612x612&w=0&k=20&c=QedI4W1AwyUDcNzuHAjT_rBNE6c69a1F6_4W3t6OtE0=",
+    title: "Cloud Sécurisé",
+    subtitle: "Données protégées et accessibles",
+    description: "Infrastructure fiable adaptée aux réalités locales",
+    ctaText: "En savoir plus",
+    color: "#9C27B0",
+    overlayOpacity: 0.6,
+    icon: <Cloud sx={{ fontSize: 60 }} />,
+  },
+  // developpeur mobile app avec react native
+  {
+    id: 12,
+    imageUrl:
+      "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vYmlsZSUyMGFwcHxlbnwwfHwwfHx8MA%3D%3D",
+    title: "Mobile & Flexible",
+    subtitle: "Gérez votre école partout",
+    description: "Optimisé pour smartphones et connexions limitées",
+    ctaText: "Voir l'application",
+    color: "#2196F3",
+    overlayOpacity: 0.5,
+    icon: <Smartphone sx={{ fontSize: 60 }} />,
   },
 ];
 

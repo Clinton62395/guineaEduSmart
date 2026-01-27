@@ -1,5 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
+// AOS animation library
+import AOS from "aos";
+import "aos/dist/aos.css";
+// React Router DOM
 import { Routes, Route, Navigate } from "react-router-dom";
+
+// Pages and Components
 import Homepage from "./pages/Homepage";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import StudentDashboard from "./pages/student/StudentDashboard";
@@ -16,8 +22,20 @@ import AdminRegistrationForm from "./pages/admin/AdminRegisterPage";
 import AdminRoutes from "./components/routes/admin.routes";
 import { CssBaseline } from "@mui/material";
 import MyThemeProvider from "./components/helpers/ThemeProvider";
+import TeacherRoutes from "./components/routes/teacher.routes";
 
 const App = () => {
+  // AOS initialization
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // durée des animations en ms
+      easing: "ease-in-out", // courbe d’animation
+      once: true, // joue l’animation une seule fois
+      mirror: false, // false = animation pas inversée au scroll up
+    });
+    AOS.refresh();
+  }, []);
+
   return (
     <MyThemeProvider>
       <Routes>
@@ -45,11 +63,14 @@ const App = () => {
           <Route path="/contact-us" element={<ContactFormComponent />} />
         </Route>
 
-        <Route path="/*" element={<AdminRoutes />} />
+        {/* ADMIN */}
+        <Route path="/admin/*" element={<AdminRoutes />} />
 
-        <Route path="/admin/students" element={<StudentDashboard />} />
+        {/* STUDENT */}
+        <Route path="/students/*" element={<StudentDashboard />} />
 
-        <Route path="/admin/teachers" element={<TeacherDashboard />} />
+        {/* TEACHER */}
+        <Route path="/teachers/*" element={<TeacherRoutes />} />
 
         {/* 404 */}
         <Route path="*" element={<NotFound404 />} />

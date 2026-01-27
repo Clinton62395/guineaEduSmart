@@ -99,7 +99,7 @@ const TeacherLayout = () => {
         </Toolbar>
         <Divider />
         <List component="nav">
-          <CommonSideBar role="teacher" />
+          <CommonSideBar role="student" />
         </List>
       </Drawer>
 

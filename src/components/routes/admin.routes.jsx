@@ -10,13 +10,17 @@ import AddStudent from "../../pages/admin/studentRelated/AddStudent";
 import TeacherDetails from "../../pages/admin/teacherRelated/TeacherDetails";
 import ShowTeachers from "../../pages/admin/teacherRelated/ShowTeachers";
 import NotFound404 from "../../pages/NotFound";
+import ChooseClass from "../../pages/admin/teacherRelated/ChooseClass";
+import ChooseSubject from "../../pages/admin/teacherRelated/ChooseSubject";
+import TeacherClassDetails from "../../pages/teacher/TeacherClassDetails";
+import ShowClasses from "../../pages/admin/classRelated/ShowClasses";
 
 // ... autres imports
 
 const AdminRoutes = () => {
   return (
     <Routes>
-      <Route path="/admin" element={<AdminLayout />}>
+      <Route path="/" element={<AdminLayout />}>
         <Route index element={<AdminHomePage />} />
         {/* <Route path="dashboard" element={<AdminHomePage />} /> */}
         <Route path="profile" element={<AdminProfile />} />
@@ -24,7 +28,7 @@ const AdminRoutes = () => {
         {/* Étudiants */}
         <Route path="students" element={<ShowStudents />} />
         <Route
-          path="addstudents"
+          path="create-student"
           element={<AddStudent situation="Student" />}
         />
         <Route
@@ -38,7 +42,14 @@ const AdminRoutes = () => {
 
         {/* Enseignants */}
         <Route path="teachers" element={<ShowTeachers />} />
+        <Route path="classes" element={<ShowClasses />} />
         <Route path="teachers/teacher/:id" element={<TeacherDetails />} />
+        <Route path="teachers/chooseclass" element={<ChooseClass />} />
+        <Route path="teachers/teacher/:id" element={<TeacherClassDetails />} />
+        <Route
+          path="teachers/choosesubject/:classId/:teacherId"
+          element={<ChooseSubject />}
+        />
 
         {/* Subjects, Class, Notice etc */}
         {/* Tu peux continuer à imbriquer toutes les routes ici */}
